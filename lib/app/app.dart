@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:skill_test/app/controller_binder.dart';
 import 'package:skill_test/features/home/ui/screen/home_screen.dart';
-
 import '../features/home/ui/screen/house_details_screen.dart';
 
 class SkillTestApp extends StatelessWidget {
