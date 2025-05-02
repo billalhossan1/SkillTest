@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:skill_test/app/custom_app_data.dart';
+import 'package:skill_test/app/app_colors.dart';
 
 class RentWidget extends StatelessWidget {
   const RentWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: const [
-          BoxShadow(color: Colors.black26, blurRadius: 5, spreadRadius: 2),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(12),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        padding: const EdgeInsets.all(0),
+        decoration: BoxDecoration(
+          color: Colors.white70,
+          boxShadow: const [
+            BoxShadow(color: Colors.black26, blurRadius: 5, spreadRadius: 2),
+          ],
+        ),
         child: Stack(
           children: [
             Image.network(
@@ -31,7 +30,7 @@ class RentWidget extends StatelessWidget {
               right: 0,
               child: Container(
                 padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
@@ -46,11 +45,11 @@ class RentWidget extends StatelessWidget {
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                       Text('Price',style: TextStyle(color: Colors.black54),),
+                      children: const [
+                        Text('Price', style: TextStyle(color: Colors.black54)),
                         Text(
                           "Rp. 2.500.000.000 / Year",
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: Colors.black54,
@@ -59,26 +58,27 @@ class RentWidget extends StatelessWidget {
                       ],
                     ),
                     ElevatedButton(
-                      onPressed: () {
+                      onPressed:(){
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
+                          SnackBar(
                             content: Text("Action successful!"),
                             duration: Duration(seconds: 2),
                             backgroundColor: Colors.green,
                           ),
                         );
+
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
-                        padding: const EdgeInsets.symmetric(
+                        backgroundColor:AppColor.themeColor,
+                        padding: EdgeInsets.symmetric(
                           vertical: 12,
                           horizontal: 20,
                         ),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
                         ),
                       ),
-                      child: const Text("Rent Now", style: TextStyle(color: Colors.white)),
+                      child: Text("Rent Now", style: TextStyle(color: Colors.white)),
                     ),
                   ],
                 ),
