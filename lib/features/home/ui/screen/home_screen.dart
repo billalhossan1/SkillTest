@@ -69,20 +69,35 @@ class _HomeScreenState extends State<HomeScreen> {
                                     locationController.changeLocation(index);
                                   },
                                   itemBuilder: (context) {
-                                    return List.generate(locations.length, (index) {
-                                      final isSelected = index == locationController.selectedIndex;
+                                    return List.generate(locations.length, (
+                                      index,
+                                    ) {
+                                      final isSelected =
+                                          index ==
+                                          locationController.selectedIndex;
                                       return PopupMenuItem<int>(
                                         value: index,
                                         child: Row(
                                           children: [
                                             if (isSelected)
-                                              const Icon(Icons.check, size: 18, color: AppColor.themeColor),
-                                            if (isSelected) const SizedBox(width: 8),
+                                              const Icon(
+                                                Icons.check,
+                                                size: 18,
+                                                color: AppColor.themeColor,
+                                              ),
+                                            if (isSelected)
+                                              const SizedBox(width: 8),
                                             Text(
                                               locations[index],
                                               style: TextStyle(
-                                                fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                                                color: isSelected ? AppColor.themeColor : Colors.black,
+                                                fontWeight:
+                                                    isSelected
+                                                        ? FontWeight.bold
+                                                        : FontWeight.normal,
+                                                color:
+                                                    isSelected
+                                                        ? AppColor.themeColor
+                                                        : Colors.black,
                                               ),
                                             ),
                                           ],
@@ -95,8 +110,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Text(
-                                        locations[locationController.selectedIndex],
-                                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                                        locations[locationController
+                                            .selectedIndex],
+                                        style: const TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500,
+                                        ),
                                       ),
                                       const Icon(Icons.arrow_drop_down),
                                     ],
@@ -148,7 +167,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         scrollDirection: Axis.horizontal,
                         itemCount: houses.length,
                         itemBuilder: (context, index) {
-                          final isSelected = subjectController.selectedIndex == index;
+                          final isSelected =
+                              subjectController.selectedIndex == index;
                           return Padding(
                             padding: const EdgeInsets.only(right: 8),
                             child: ChoiceChip(
@@ -158,7 +178,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 subjectController.changeIndex(index);
                               },
                               selectedColor: AppColor.themeColor,
-                              backgroundColor: AppColor.themeColor.withAlpha(20),
+                              backgroundColor: AppColor.themeColor.withAlpha(
+                                20,
+                              ),
                               labelStyle: TextStyle(
                                 color: isSelected ? Colors.white : Colors.black,
                               ),
@@ -168,7 +190,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     const SizedBox(height: 10),
-                    CategoryTextWidget(onTapSeeAll: (){}, categoryTittle: 'Near From You'),
+                    CategoryTextWidget(
+                      onTapSeeAll: () {},
+                      categoryTittle: 'Near From You',
+                    ),
                     const SizedBox(height: 10),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
@@ -181,15 +206,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     const SizedBox(height: 10),
-                    CategoryTextWidget(onTapSeeAll: (){}, categoryTittle: 'Best For You'),
+                    CategoryTextWidget(
+                      onTapSeeAll: () {},
+                      categoryTittle: 'Best For You',
+                    ),
                     Column(
                       children: [
                         HouseListCard(),
                         HouseListCard(),
                         HouseListCard(),
                       ],
-                    )
-
+                    ),
                   ],
                 ),
               ),

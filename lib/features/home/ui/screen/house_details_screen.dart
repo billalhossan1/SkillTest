@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:skill_test/app/app_colors.dart';
@@ -7,6 +6,7 @@ import 'package:skill_test/features/home/controller/see_more_controller.dart';
 import 'package:skill_test/features/home/ui/widget/details_screen_widget/details_house_card.dart';
 import 'package:skill_test/features/home/ui/widget/details_screen_widget/details_profile_card.dart';
 import 'package:skill_test/features/home/ui/widget/details_screen_widget/gellery.dart';
+import 'package:skill_test/features/home/ui/widget/details_screen_widget/rent_widget.dart';
 
 class HouseDetailsScreen extends StatefulWidget {
   const HouseDetailsScreen({super.key});
@@ -28,42 +28,46 @@ class _HouseDetailsScreenState extends State<HouseDetailsScreen> {
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const DetailsHouseCard(),
-              const SizedBox(height: 16),
-              CustomAppData.primaryText('Description'),
-              const SizedBox(height: 8),
-              Obx(() {
-                final isExpanded = seeMoreController.isExpanded.value;
-                return GestureDetector(
-                  onTap: seeMoreController.manageExpanded,
-                  child: RichText(
-                    text: TextSpan(
-                      text: isExpanded
-                          ? fullDescription
-                          : '${fullDescription.substring(0, 50)}...',
-                      style: const TextStyle(color: Colors.black, fontSize: 14),
-                      children: [
-                        TextSpan(
-                          text: isExpanded ? ' See Less' : ' See More',
-                          style: TextStyle(
-                            color: AppColor.themeColor,
-                            fontWeight: FontWeight.bold,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const DetailsHouseCard(),
+                const SizedBox(height: 16),
+                CustomAppData.primaryText('Description'),
+                const SizedBox(height: 8),
+                Obx(() {
+                  final isExpanded = seeMoreController.isExpanded.value;
+                  return GestureDetector(
+                    onTap: seeMoreController.manageExpanded,
+                    child: RichText(
+                      text: TextSpan(
+                        text:
+                            isExpanded
+                                ? fullDescription
+                                : '${fullDescription.substring(0, 50)}...',
+                        style: const TextStyle(color: Colors.black, fontSize: 14),
+                        children: [
+                          TextSpan(
+                            text: isExpanded ? ' See Less' : ' See More',
+                            style: TextStyle(
+                              color: AppColor.themeColor,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                );
-              }),
-              SizedBox(height: 20,),
-              DetailsProfileCard(),
-              SizedBox(height: 20,),
-              GalleryWidget()
-            ],
+                  );
+                }),
+                SizedBox(height: 20),
+                DetailsProfileCard(),
+                SizedBox(height: 20),
+                GalleryWidget(),
+                SizedBox(height: 20,),
+                RentWidget(),
+              ],
+            ),
           ),
         ),
       ),

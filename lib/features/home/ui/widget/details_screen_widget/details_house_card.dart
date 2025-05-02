@@ -27,7 +27,7 @@ class _DetailsHouseCardState extends State<DetailsHouseCard> {
               children: [
                 // Background Image
                 Image.network(
-                  'https://www.bhg.com/thmb/H9VV9JNnKl-H1faFXnPlQfNprYw=/1799x0/filters:no_upscale():strip_icc()/white-modern-house-curved-patio-archway-c0a4a3b3-aa51b24d14d0464ea15d36e05aa85ac9.jpg',
+                  'https://media.istockphoto.com/id/1393537665/photo/modern-townhouse-design.jpg?s=612x612&w=0&k=20&c=vgQesOXDRzz0UfOZxmUtE-rFe75YgA9GvkKS8eeeumE=',
                   width: double.infinity,
                   height: 300,
                   fit: BoxFit.cover,
@@ -98,17 +98,13 @@ class _DetailsHouseCardState extends State<DetailsHouseCard> {
                             Icon(Icons.bed_outlined, color: Colors.white),
                           ),
                           SizedBox(width: 5),
-                          Expanded(
-                            child: CustomAppData.secondaryText('6 Bedrooms'),
-                          ),
+                          Text('6 Bedrooms',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                           SizedBox(width: 15),
                           iconWidget(
                             Icon(Icons.bathtub_outlined, color: Colors.white),
                           ),
                           SizedBox(width: 5),
-                          Expanded(
-                            child: CustomAppData.secondaryText('4 Bathrooms'),
-                          ),
+                          Text('4 Bathrooms',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                         ],
                       ),
                     ],

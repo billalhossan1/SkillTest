@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skill_test/app/app_const.dart';
 import 'package:skill_test/features/home/ui/screen/house_details_screen.dart';
 
 class HomeHouseCard extends StatelessWidget {
@@ -18,8 +19,7 @@ class HomeHouseCard extends StatelessWidget {
           child: Stack(
             children: [
               Image.network(
-                'https://www.bhg.com/thmb/H9VV9JNnKl-H1faFXnPlQfNprYw=/1799x0/filters:no_upscale():strip_icc()/white-modern-house-curved-patio-archway-c0a4a3b3-aa51b24d14d0464ea15d36e05aa85ac9.jpg',
-                width: double.infinity,
+                AppConst.testImageUrl,                width: double.infinity,
                 height: 300,
                 fit: BoxFit.cover,
               ),
