@@ -57,7 +57,7 @@ class _DetailsHouseCardState extends State<DetailsHouseCard> {
                   right: 10,
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.pop(context);
+                      // Navigator.pop(context);
                     },
                     child: CircleAvatar(
                       radius: 20,

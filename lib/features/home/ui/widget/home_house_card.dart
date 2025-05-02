@@ -8,7 +8,7 @@ class HomeHouseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         Navigator.pushNamed(context, HouseDetailsScreen.name);
       },
       child: Card(
@@ -19,7 +19,8 @@ class HomeHouseCard extends StatelessWidget {
           child: Stack(
             children: [
               Image.network(
-                AppConst.testImageUrl,                width: double.infinity,
+                AppConst.testImageUrl,
+                width: double.infinity,
                 height: 300,
                 fit: BoxFit.cover,
               ),

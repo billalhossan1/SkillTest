@@ -1,15 +1,15 @@
 import 'package:get/get.dart';
 
 class SelectedHouseController extends GetxController{
-  int _selectedSubject=0;
-  int get selectedIndex => _selectedSubject;
+  int _selectedHouse=0;
+  int get selectedIndex => _selectedHouse;
 
   void changeIndex(int index)
   {
-    if(_selectedSubject==index) {
+    if(_selectedHouse==index) {
       return;
     }
-    _selectedSubject=index;
+    _selectedHouse=index;
     update();
   }
 
