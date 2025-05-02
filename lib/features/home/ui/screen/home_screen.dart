@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<SelectedHouseController>(
-      builder: (subjectController) {
+      builder: (selectedHouseController) {
         return Scaffold(
           body: Stack(
             children: [
@@ -235,14 +235,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                 itemCount: houses.length,
                                 itemBuilder: (context, index) {
                                   final isSelected =
-                                      subjectController.selectedIndex == index;
+                                      selectedHouseController.selectedIndex == index;
                                   return Padding(
                                     padding: const EdgeInsets.only(right: 8),
                                     child: ChoiceChip(
                                       label: Text(houses[index]),
                                       selected: isSelected,
                                       onSelected: (_) {
-                                        subjectController.changeIndex(index);
+                                        selectedHouseController.changeIndex(index);
                                       },
                                       selectedColor: AppColor.themeColor,
                                       backgroundColor: AppColor.themeColor.withAlpha(20),

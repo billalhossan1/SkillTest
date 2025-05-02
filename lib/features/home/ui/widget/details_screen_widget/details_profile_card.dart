@@ -8,7 +8,6 @@ class DetailsProfileCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-
         CircleAvatar(
           radius: 30,
           backgroundImage: NetworkImage(
@@ -25,37 +24,27 @@ class DetailsProfileCard extends StatelessWidget {
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 5),
-              Text(
-                'Owner',
-                style: TextStyle(fontSize: 14, color: Colors.grey),
-              ),
+              Text('Owner', style: TextStyle(fontSize: 14, color: Colors.grey)),
             ],
           ),
         ),
-        SizedBox(height: 10,),
-        Row(
-          children: [
-            profileIcon(Icon(Icons.phone,color: Colors.white,),),
-           SizedBox(width: 12,),
-           profileIcon(Icon(Icons.chat_bubble_outline, color: Colors.white)),
-          ],
-        ),
+        SizedBox(height: 10),
+        profileIcon(Icon(Icons.phone, color: Colors.white)),
+        SizedBox(width: 12),
+        profileIcon(Icon(Icons.chat_bubble_outline, color: Colors.white)),
       ],
     );
   }
 
   Container profileIcon(Icon icon) {
     return Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: AppColor.themeColor.withAlpha(150)
-            ),
-            child: IconButton(
-              icon: icon,
-              onPressed: () {},
-            ),
-          );
+      height: 40,
+      width: 40,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        color: AppColor.themeColor.withAlpha(150),
+      ),
+      child: IconButton(icon: icon, onPressed: () {}),
+    );
   }
 }

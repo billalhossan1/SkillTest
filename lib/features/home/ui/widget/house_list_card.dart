@@ -17,7 +17,7 @@ class HouseListCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withAlpha(1),
+              color: Colors.black.withAlpha(2),
               blurRadius: 4,
             ),
           ],
